@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+src/credentials/google.json
+src/images/original.png
+src/images/final.png
