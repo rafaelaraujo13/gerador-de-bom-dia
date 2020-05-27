@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 from random import choice
 
 dir = os.path.dirname(__file__)
-queries = ['flower', 'nature', 'sunrise', 'blue sky', 'heart']
+queries = ['flower', 'rose', 'nature', 'sunrise', 'blue sky', 'heart', 'coffee', 'landscape', 'sea']
 
 
 def get_and_download_image():
@@ -27,16 +27,30 @@ def get_image_links(service, search_engine_id):
     return [image['link'] for image in results['items']]
 
 def download_image(image_links):
-    current_index = 0
+    selected_link = choice(image_links)
     downloaded = False
 
     while not downloaded:
         try:
-            image = requests.get(image_links[current_index])
-
+            image = requests.get(selected_link)
             with open(os.path.join(dir, '../', 'images', 'original.png'), 'wb') as file:
                 file.write(image.content)
+                downloaded = True
 
-            downloaded = True
         except:
-            current_index += 1
+            selected_link = choice(image_links)
+
+
+    # current_index = 0
+    # downloaded = False
+    #
+    # while not downloaded:
+    #     try:
+    #         image = requests.get(image_links[current_index])
+    #
+    #         with open(os.path.join(dir, '../', 'images', 'original.png'), 'wb') as file:
+    #             file.write(image.content)
+    #
+    #         downloaded = True
+    #     except:
+    #         current_index += 1
