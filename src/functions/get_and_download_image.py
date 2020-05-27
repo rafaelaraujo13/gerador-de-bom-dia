@@ -39,18 +39,3 @@ def download_image(image_links):
 
         except:
             selected_link = choice(image_links)
-
-
-    # current_index = 0
-    # downloaded = False
-    #
-    # while not downloaded:
-    #     try:
-    #         image = requests.get(image_links[current_index])
-    #
-    #         with open(os.path.join(dir, '../', 'images', 'original.png'), 'wb') as file:
-    #             file.write(image.content)
-    #
-    #         downloaded = True
-    #     except:
-    #         current_index += 1
