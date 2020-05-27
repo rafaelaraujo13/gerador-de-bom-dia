@@ -8,7 +8,7 @@ dir = os.path.dirname(__file__)
 queries = ['flower', 'nature', 'sunrise', 'blue sky', 'heart']
 
 
-def get_and_download_image(sentence):
+def get_and_download_image():
     api_key, search_engine_id = get_credentials()
     service = build('customsearch', 'v1', developerKey=api_key)
     image_links = get_image_links(service, search_engine_id)
