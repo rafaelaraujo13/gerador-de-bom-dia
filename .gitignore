@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 src/credentials/google.json
-src/images/*.png
+src/images/converted.png
+src/images/original.png
